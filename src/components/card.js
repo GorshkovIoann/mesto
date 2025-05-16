@@ -45,7 +45,7 @@ deleteCardPopup.addEventListener("submit", (evt) => {
 
   const card_id = deleteCardPopup.dataset.cardId;
 
-  deleteCardBtn.textContent = "Удаление...";
+  deleteCardBtn.textContent = "Удаление";
 
   deleteCardApi(card_id)
     .then(() => {

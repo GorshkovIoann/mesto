@@ -11,5 +11,5 @@ export const initialCards = [
     { name: "Иваново", link: ivanovo, owner: { _id: "-1" } },
     { name: "Камчатка", link: kamchatka, owner: { _id: "-1" } },
     { name: "Холмогорский район", link: kholmogorsky, owner: { _id: "-1" } },
-    { name: "Байкал", link: baikal, owner: { _id: "-2" } }
+    { name: "Байкал", link: baikal, owner: { _id: "-1" } }
 ];
