@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Документация — Mesto</title>
+  <style>
+    body{font-family:Inter, Arial, sans-serif;max-width:900px;margin:36px auto;color:#111;line-height:1.5;padding:0 16px}
+    h1,h2{margin:0 0 12px}
+    h3{margin:18px 0 8px}
+    pre{background:#f6f6f6;padding:12px;border-radius:6px;overflow:auto}
+    code{font-family:monospace}
+    nav{border-left:3px solid #eaeaea;padding-left:12px;margin-bottom:20px}
+    ul{margin:6px 0 12px 20px}
+    footer{margin-top:28px;color:#666;font-size:0.9em}
+  </style>
+</head>
+<body>
+  <h1>Документация по проекту «Mesto»</h1>
+  <nav>
+    <strong>Кратко:</strong> статический веб-сайт, запуск и деплой через npm/webpack/gh-pages. Хостинг — GitHub Pages.
+  </nav>
+
+  <h2>1. Что это</h2>
+  <p>Простой клиентский сайт (HTML/CSS/JS). Исходники находятся в папке <code>src/</code>. Сборка выполняется Webpack, результат — в <code>dist/</code>. Для публикации используется пакет <code>gh-pages</code>.</p>
+
+  <h2>2. Требования</h2>
+  <ul>
+    <li>Node.js (v16+ рекомендуется)</li>
+    <li>npm</li>
+    <li>Доступ к репозиторию на GitHub для публикации Pages</li>
+  </ul>
+
+  <h2>3. Структура (ключевые файлы)</h2>
+  <pre><code>mesto-main/
+  src/
+    index.html
+    index.js
+    pages/
+      index.css
+    vendor/
+      fonts/
+        Inter-*.woff2
+      fonts.css
+      normalize.css
+  package.json
+  webpack.config.js
+  README.md
+</code></pre>
+
+  <h2>4. Быстрый запуск локально</h2>
+  <ol>
+    <li>Клонировать репозиторий и перейти в каталог проекта:
+      <pre><code>git clone https://github.com/GorshkovIoann/mesto.git
+cd mesto</code></pre>
+    </li>
+    <li>Установить зависимости:
+      <pre><code>npm install</code></pre>
+    </li>
+    <li>Запустить дев-сервер (webpack-dev-server):
+      <pre><code>npm run dev</code></pre>
+      <p>Откройте адрес, который покажет сборщик (обычно <code>http://localhost:8080</code>).</p>
+    </li>
+    <li>Альтернатива (быстрая проверка статических файлов):
+      <pre><code># из папки src
+python -m http.server 5500
+# открыть http://localhost:5500</code></pre>
+      <p>Подходит если в проекте нет модулей уровня сборщика.</p>
+    </li>
+  </ol>
+
+  <h2>5. Сборка и деплой на GitHub Pages</h2>
+  <p>Команды, описанные в <code>package.json</code>:</p>
+  <pre><code>npm run build    # webpack --mode production -> создаёт dist/
+npm run deploy   # gh-pages -d dist -> публикует dist/ в ветку gh-pages</code></pre>
+  <p>Процедура:</p>
+  <ol>
+    <li>Установить зависимости: <code>npm install</code>.</li>
+    <li>Собрать: <code>npm run build</code>.</li>
+    <li>Опубликовать: <code>npm run deploy</code>. После выполнения содержимое <code>dist/</code> будет отправлено в ветку <code>gh-pages</code> и доступно на GitHub Pages по адресу вида <code>https://<ваш-логин>.github.io/<репозиторий></code>.</li>
+  </ol>
